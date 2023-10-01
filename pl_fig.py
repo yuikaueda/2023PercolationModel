@@ -1,38 +1,31 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-data1 = np.loadtxt('change_n80_a001_b5.dat')
-data2 = np.loadtxt('change_n150_200_a001_b5.dat')
-#data3 = np.loadtxt('long_n150_a001_b5.dat')
-#data4 = np.loadtxt('long_n200_a001_b5.dat')
-#data5 = np.loadtxt('change_kcon_20_070_ss_100.dat')
-#data6 = np.loadtxt('change_kcon_20_080_ss_100.dat')
-#data7 = np.loadtxt('change_kcon_20_090_ss_100.dat')
-#data8 = np.loadtxt('change_kcon_20_100_ss_100.dat')
+data1 = np.loadtxt('tlong_change_n80_200_a001_b5.dat')
+data2 = np.loadtxt('tlong_change_n150_200_a001_b5.dat')
 
-l1 = data1[:,0]
-p1 = data1[:,1]
+x1 = data1[:,0]
+y1 = data1[:,1]
 
-l2 = data2[:,0]
-p2 = data2[:,1]
+x2 = data2[:,0]
+y2 = data2[:,1]
 
-#l3 = data3[:,0]
-#p3 = data3[:,1]
+l1 = []
+p1 = []
+l2 = []
+p2 = []
 
-#l4 = data4[:,0]
-#p4 = data4[:,1]
+for i in range(len(x1)):
+    if 0 <= x1[i] <= 100:
+        l1.append(x1[i])
+        p1.append(y1[i])
 
-#l5 = data4[:,0]
-#p5 = data4[:,1]
+for i in range(len(x2)):
+    if 0 <= x2[i] <= 100:
+        l2.append(x2[i])
+        p2.append(y2[i])
 
-#l6 = data4[:,0]
-#p6 = data4[:,1]
 
-#l7 = data4[:,0]
-#p7 = data4[:,1]
-
-#l8 = data4[:,0]
-#p8 = data4[:,1]
 
 fig, axe = plt.subplots(1, 1)
 
@@ -44,8 +37,8 @@ plt.xlabel("Time", fontsize = 18)
 #plt.ylabel("Percolatin Probability", fontsize = 18)
 plt.ylabel("Percolation plobability", fontsize = 18)
 #plt.ylim(0, 1.1)
-#plt.xlim(0, 30)
-
+#plt.xlim(0, 100)
+#plt.margins(x=5)
 axe.legend(loc='best')
-fig.savefig("re_Time_chanege_n80_150.png")
-#plt.show()
+fig.savefig("chanege_n80_150_to200.png")
+plt.show()
