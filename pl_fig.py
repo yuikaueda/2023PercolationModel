@@ -16,12 +16,12 @@ l2 = []
 p2 = []
 
 for i in range(len(x1)):
-    if 0 <= x1[i] <= 100:
+    if 0 <= x1[i] <= 200:
         l1.append(x1[i])
         p1.append(y1[i])
 
 for i in range(len(x2)):
-    if 0 <= x2[i] <= 100:
+    if 0 <= x2[i] <= 200:
         l2.append(x2[i])
         p2.append(y2[i])
 
@@ -40,5 +40,5 @@ plt.ylabel("Percolation plobability", fontsize = 18)
 #plt.xlim(0, 100)
 #plt.margins(x=5)
 axe.legend(loc='best')
-fig.savefig("chanege_n80_150_to200.png")
+fig.savefig("chanege_t200_n80_150_to200.png")
 plt.show()
