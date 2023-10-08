@@ -51,7 +51,7 @@ plt.title(f'Comparison of Two Equations with Parameter Changes (N_total={N_total
 plt.grid(True)
 
 # グラフを保存
-plt.savefig('houkai_comparison_of_Two_Equations_with_Parameter_Changes.png')
+plt.savefig('a0.1_houkai_comparison_of_Two_Equations_with_Parameter_Changes.png')
 
 plt.show()
 
