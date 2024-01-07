@@ -13,8 +13,8 @@ dt = 0.1
 t_values = np.arange(t_start, t_end, dt)
 
 # 初期 (kon, koff) と変更後の (kon, koff) の組み合わせ
-initial_kon_koff = (0.8, 0.2)
-changed_kon_koff = (0.2, 0.8)
+initial_kon_koff = (0.2, 0.8)
+changed_kon_koff = (0.8, 0.2)
 
 # プロット
 plt.figure(figsize=(10, 6))
@@ -41,17 +41,17 @@ for i, t in enumerate(t_values[:-1]):
    # if t == 60:
    #     plt.axvline(x=t, color='red', linestyle='--', label='kon, koff change')
 
-plt.plot(t_values, Ns_values1, label='∂Ns/∂t = -koff/(kon+koff)*Ns + kon/(kon+koff)*(N-Ns)')
-plt.plot(t_values, Ns_values2, label='∂Ns/∂t = -koff/(kon+koff)*Ns + A*(N-Ns)', linestyle='--')
+plt.plot(t_values, Ns_values1, label="∂Ns/∂t = -ko'ff/(k'on+k'off)*Nb + k'on/(k'on+k'off)*Nu")
+plt.plot(t_values, Ns_values2, label='∂Ns/∂t = -koff/(kon+koff)*Nb + A*Nu', linestyle='--')
 
-plt.xlabel('Time')
-plt.ylabel('Ns')
+plt.xlabel('Time',fontsize=15)
+plt.ylabel('Nb',fontsize=15)
 plt.legend()
-plt.title(f'Comparison of Two Equations with Parameter Changes (N_total={N_total}, A={A})')
-plt.grid(True)
+#plt.title(f'Comparison of Two Equations with Parameter Changes (N_total={N_total}, A={A})')
+#plt.grid(True)
 
 # グラフを保存
-plt.savefig('a0.1_houkai_comparison_of_Two_Equations_with_Parameter_Changes.png')
+plt.savefig('2model_hikaku_seisei_a0.1_syokiKon08Koff02.png')
 
 plt.show()
 
