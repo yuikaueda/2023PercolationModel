@@ -13,8 +13,8 @@ dt = 0.1
 t_values = np.arange(t_start, t_end, dt)
 
 # 各(kon, koff)の組み合わせと初期値
-parameter_combinations = [(0.8, 0.2), (0.7, 0.3)]
-initial_kon_koff = [(0.8, 0.2), (0.7, 0.3)]
+parameter_combinations = [(0.2, 0.8), (0.7, 0.3)]
+initial_kon_koff = [(0.2, 0.8), (0.7, 0.3)]
 
 # プロット
 plt.figure(figsize=(10, 6))
@@ -29,18 +29,18 @@ for i, (initial_kon, initial_koff) in enumerate(initial_kon_koff):
 
         if t == 60:
             # 初期 (kon, koff) を変更
-            initial_kon, initial_koff = (0.2, 0.8)
+            initial_kon, initial_koff = (0.8, 0.2)
 
     plt.plot(t_values, Ns_values, label=f'Initial (kon, koff) = ({parameter_combinations[i][0]}, {parameter_combinations[i][1]})')
 
 plt.xlabel('Time',fontsize=15)
-plt.ylabel('Nd',fontsize=15)
+plt.ylabel('Nb',fontsize=15)
 plt.legend()
 #plt.title(f'Ns vs. Time with Parameter Changes (N_total={N_total}, A={A})')
 #plt.grid(True)
 
 # グラフを保存
-plt.savefig('0107_houkai_Ns_vs_Time_with_Parameter_Changes.png')
+plt.savefig('0107_seisei_Ns_vs_Time_with_Parameter_Changes.png')
 
 plt.show()
 
